@@ -1,0 +1,39 @@
+/* The master container for the whole screen */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* Crucial: Prevents the whole browser window from scrolling */
+  background-color: #f8fafc;
+}
+
+/* Sidebar Wrapper */
+.sidebar-container {
+  /* You can set the actual width inside your side-navbar component's CSS */
+  /* This flex rule just ensures it doesn't shrink or grow */
+  flex: 0 0 auto; 
+  height: 100vh;
+  z-index: 10;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05); /* Optional: distinct shadow */
+}
+
+/* Wrapper for everything on the right side */
+.main-wrapper {
+  flex: 1; /* Takes up all remaining width */
+  display: flex;
+  flex-direction: column; /* Stacks the Top Navbar and the Router Content vertically */
+  overflow: hidden; 
+}
+
+/* Top Navbar Wrapper */
+.topbar-container {
+  flex: 0 0 auto; /* Prevents the top bar from collapsing */
+  z-index: 5;
+}
+
+/* The Routing Content Area */
+.content-area {
+  flex: 1; /* Takes up all remaining height below the Top Navbar */
+  overflow-y: auto; /* THIS is where the scrolling happens for your inner components */
+  padding: 2rem; /* Breathing room for your routed components */
+}

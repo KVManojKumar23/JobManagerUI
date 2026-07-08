@@ -1,0 +1,34 @@
+<div class="login-container">
+
+    <div class="logo-corner">
+        <img src="assets/Logo.png" alt="Saftocam Solutions Logo" class="logo" />
+    </div>
+
+    <div class="login-form-section">
+        <form class="form-wrapper" [formGroup]="loginForm" (ngSubmit)="login()">
+
+            <div class="form-header">
+                <h2>Welcome Back</h2>
+                <p>Please sign in to continue.</p>
+            </div>
+
+            <div class="field">
+                <label for="username">Username</label>
+                <input id="username" type="text" pInputText formControlName="username"
+                    placeholder="Enter your username" />
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <p-password id="password" [toggleMask]="true" [feedback]="false" formControlName="password"
+                    placeholder="Enter your password">
+                </p-password>
+            </div>
+
+            <p-button label="Sign In" type="submit" [disabled]="loginForm.invalid">
+            </p-button>
+
+        </form>
+    </div>
+
+</div>
